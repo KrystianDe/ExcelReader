@@ -1,16 +1,17 @@
 import os
 import openpyxl
-import csv
 from Account import Account
 from Project import Project
 
+path = 'd:\\Praca\\ExcelReader'
 
 class Excel_Reader:
 
-    def __init__(self):
-        self.excel_files = self.get_excel_files(os.getcwd())
+    def __init__(self, path):
+        self.path = path
+        self.excel_files = self.get_excel_files(path)
 
-    def get_excel_files(self, path):
+    def get_excel_files(self):
         files = []
         for r, d, f in os.walk(path):
             for file in f:
